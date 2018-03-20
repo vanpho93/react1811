@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Word } from './Word';
 
 export class ListWord extends Component {
     genWordItem(word) {
@@ -10,7 +11,6 @@ export class ListWord extends Component {
             </div>
         )
     }
-
     render() {
         const words = [
             { _id: 'abcd1', en: 'One', vn: 'Mot', isMemorized: true },
@@ -20,8 +20,10 @@ export class ListWord extends Component {
         ];
         return (
             <div>
+                <button onClick={() => alert(123)}>Click me!!!</button>
                 <h3>List word works!</h3>
-                {words.map(this.genWordItem)}
+                {/* {words.map(this.genWordItem)} */}
+                { words.map(w => <Word key={w._id} wordInfo={w} />) }
             </div>
         );
     }
